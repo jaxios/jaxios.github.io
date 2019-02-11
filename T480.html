@@ -2,15 +2,167 @@
 
 <html>
     <head>
+       <title>WIP Portfolio</title> 
+       <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="container">
+
+        <br>
+            <div id="header">        
+                <h1>Thinkpad T480 Utilities and Configuration</h1>
+            </div>
+
+            <div id="content">
+                <div id="nav">
+                    <a href="index.html" >home</a>
+                    &nbsp;
+                    <a href="T480.html" id="selectedPage">projects</a>
+                </div>
+
+                <div id="main"><br><br>
+                        <h2>Utilities</h2>
+                        <p>Some packages that are needed to ensure that the following programs will work.<br></p>
+                
+                        <div id="multiLine">
+                                <code>
+                                        sudo apt install gir1.2-gtop-2.0 libgtop2-dev lm-sensors<br>
+                                        sudo apt install python3-gi git python3-setuptools python3-stdeb<br>
+                                        sudo apt install dconf-cli<br>
+                                        sudo apt install chrome-gnome-shell<br>
+                                        sudo apt install exfat-fuse exfat-utils<br>
+                                        sudo apt install curl<br>
+                                        sudo apt install openvpn<br>
+                                        sudo apt install network-manager-openvpn-gnome<br>
+                                        sudo apt install resolvconf<br>
+                                        sudo apt install -y libgconf-2-4
+                                </code>
+                        </div>
+                        <br><br>
+                
+                        <h2>balenaEtcher</h2>
+                        <p>Startup USB creator. <br>
+                                <a href="https://www.balena.io/etcher/">Official site</a>
+                        </p>
+                        <br>
+                        <h2>WoeUSB</h2>
+                        <p>Bootable Windows USB creator. </p>
+                
+                        <div class="multiLine">
+                                <code>
+                                        sudo add-apt-repository ppa:nilarimogard/webupd8<br>
+                                        sudo apt update<br>
+                                        sudo apt install woeusb
+                                </code>
+                        </div>
+                
+                        <br><br>
+                
+                        <h2>Fix Youtube screen tearing on Firefox</h2>
+                        <p>Create/edit: <br><br>
+                                <code>/usr/share/X11/xorg.conf.d/20-intel.conf</code> <br><br>
+                                And add:
+                
+                                <div class="multiLine">
+                                <code>
+                                        Section "Device" <br>
+                                        Identifier "Intel Graphics" <br>
+                                        Driver "intel" <br>
+                                        Option "TearFree" "true"<br>
+                                        EndSection <br>
+                                </code>
+                                </div>
+                                <br>
+                
+                                <a href="https://askubuntu.com/questions/964868/ubuntu-16-04-dell-screen-tearing">Credit.</a>
+                        </p>
+                
+                        <h2>TLP</h2>
+                        <p>Advanced power managment tool, credit to <a href="https://linrunner.de/en/">linrunner</a></p>
+                        <div class="multiLine">
+                                <code>
+                                        sudo add-apt-repository ppa:linrunner/tlp<br>
+                                        sudo apt update<br>
+                                        sudo apt install tlp tp-smapi-dkms acpi-call-dkms<br>
+                                </code>
+                        </div>
+                
+                        <h3>Unofficial UI</h3>
+                        
+                        <div class="multiLine">
+                                <code>
+                                        git clone https://github.com/d4nj1/TLPUI<br>
+                                        cd TLPUI/<br>
+                                        python3 setup.py --command-packages=stdeb.command bdist_deb<br>
+                                        sudo dpkg -i deb_dist/python3-tlpui_*all.deb<br>
+                                </code>
+                        </div>
+                
+                        <p><a href="https://github.com/jaxios/tlp">My current configuration (Updated 11/02/2019)</a></p>
+                
+                        <h2>POWERTOP</h2>
+                        <p>Power consumption monitor.</p>
+                        <code>
+                                sudo apt install powertop
+                        </code>
+                        <br><br>
+                
+                        <h2>GNOME TERMINAL'S THEMES</h2><br><br>
+                        <code>
+                                bash -c  "$(wget -qO- https://git.io/vQgMr)"
+                        </code>
+                        <br><br>
+                
+                        <h2>NEOFETCH</h2><br><br>
+                        <code>
+                                sudo apt install neofetch
+                        </code>
+                
+                        <p>To run it every time the terminal is opened, add <code>neofetch</code> at the end of <code>~/.bashrc</code></p>
+                        <br><br>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+
+<html>
+    <head>
 <title>W.I.P portfolio</title>
 <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-<!--HEADER-->
+
         <header>
 
-            <p class="disclaimer"><strong>DISCLAIMER:</strong> This site is a work in progress.</p>
+            <p id="disclaimer"><strong>DISCLAIMER:</strong> This site is a work in progress.</p>
 
             <h1>Thinkpad T480 Utilities and Configuration</h1>
 
@@ -21,7 +173,7 @@
             </nav>
 
         </header>
-<!--MAIN-->
+
         <main>
             <h2>Utilities</h2>
             <p>Some packages that are needed to ensure that the following programs will work.<br></p>
@@ -30,14 +182,14 @@
                     <code>
                             sudo apt install gir1.2-gtop-2.0 libgtop2-dev lm-sensors<br>
                             sudo apt install python3-gi git python3-setuptools python3-stdeb<br>
-                            sudo apt-get install dconf-cli<br>
-                            sudo apt-get install chrome-gnome-shell<br>
+                            sudo apt install dconf-cli<br>
+                            sudo apt install chrome-gnome-shell<br>
                             sudo apt install exfat-fuse exfat-utils<br>
                             sudo apt install curl<br>
-                            sudo apt-get install openvpn<br>
-                            sudo apt-get install network-manager-openvpn-gnome<br>
+                            sudo apt install openvpn<br>
+                            sudo apt install network-manager-openvpn-gnome<br>
                             sudo apt install resolvconf<br>
-                            sudo apt-get install -y libgconf-2-4
+                            sudo apt install -y libgconf-2-4
                     </code>
             </div>
             <br><br>
@@ -125,3 +277,5 @@
         </main>
     </body>
 </html>
+
+-->
